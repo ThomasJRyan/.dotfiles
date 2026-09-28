@@ -1,0 +1,122 @@
+# Best-effort migration from ~/.dotfiles/zellij/config.kdl.
+# Herdr uses a single prefix mode instead of Zellij's modal keymap.
+
+onboarding = false
+
+# [theme]
+# # Catppuccin Macchiato, applied over Herdr's built-in Catppuccin base.
+# name = "catppuccin"
+#
+# [theme.custom]
+# panel_bg = "#24273a"
+# surface0 = "#363a4f"
+# surface1 = "#494d64"
+# surface_dim = "#1e2030"
+# overlay0 = "#6e738d"
+# overlay1 = "#8087a2"
+# text = "#cad3f5"
+# subtext0 = "#a5adcb"
+# mauve = "#c6a0f6"
+# green = "#a6da95"
+# yellow = "#eed49f"
+# red = "#ed8796"
+# blue = "#8aadf4"
+# teal = "#8bd5ca"
+# peach = "#f5a97f"
+
+[terminal]
+# Equivalent to Zellij's default shell and inherited working directory.
+new_cwd = "follow"
+
+[advanced]
+# Comparable to Zellij's 10000-line scrollback default; Herdr measures bytes.
+scrollback_limit_bytes = 10000000
+
+[keys]
+# Herdr's native tmux-style prefix.
+prefix = "ctrl+b"
+
+# Session/workspace
+goto = "prefix+g"
+workspace_picker = "prefix+w"
+previous_workspace = ["alt+up", "ctrl+up"]
+next_workspace = ["alt+down", "ctrl+down"]
+detach = "prefix+q"
+toggle_sidebar = "prefix+b"
+
+# Tabs: Zellij tab mode's n/j/l, p/h/k, 1..9, r, and x equivalents.
+new_tab = ["prefix+c", "ctrl+shift+t"]
+next_tab = ["prefix+n", "alt+right", "ctrl+right"]
+previous_tab = ["prefix+p", "alt+left", "ctrl+left"]
+switch_tab = "prefix+1..9"
+rename_tab = ["prefix+shift+t", "ctrl+shift+r"]
+close_tab = ["prefix+shift+x", "ctrl+shift+q"]
+
+# Panes: Zellij pane mode and shared Alt navigation equivalents.
+focus_pane_left = ["prefix+h", "alt+h"]
+focus_pane_down = ["prefix+j", "alt+j"]
+focus_pane_up = ["prefix+k", "alt+k"]
+focus_pane_right = ["prefix+l", "alt+l"]
+cycle_pane_next = "prefix+tab"
+cycle_pane_previous = "prefix+shift+tab"
+swap_pane_left = "prefix+shift+h"
+swap_pane_down = "prefix+shift+j"
+# Keep prefix+shift+k available for the herdr-board command below.
+swap_pane_up = "alt+shift+k"
+swap_pane_right = "prefix+shift+l"
+split_vertical = "prefix+v"
+split_horizontal = "prefix+minus"
+close_pane = "prefix+x"
+zoom = "prefix+z"
+resize_mode = "prefix+r"
+rename_pane = "prefix+shift+p"
+
+# Scrollback/copy equivalents.
+copy_mode = "prefix+["
+
+[[keys.command]]
+key = "prefix+shift+k"
+type = "shell"
+command = "herdr plugin action invoke open-board --plugin herdr-board"
+description = "open herdr-board kanban (overlay)"
+
+# herdr-nvim. This replaces the previously unused edit_scrollback binding.
+# prefix+o opens the agent-touched file picker.
+[[keys.command]]
+key = "prefix+e"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.toggle"
+description = "nvim sidebar"
+
+[[keys.command]]
+key = "prefix+o"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.pick-file"
+description = "open file from agent output"
+
+[ui]
+copy_on_select = true
+pane_borders = true
+
+agent_panel_sort = "spaces"
+show_agent_labels_on_pane_borders = true
+[ui.toast]
+delivery = "off"
+
+# Not directly representable in Herdr's standard keymap:
+# - Zellij's pane/tab/resize/move/session/search modal modes
+# - floating, embedded, pinned, grouped, and synchronized panes/tabs
+# - BreakPaneLeft/BreakPaneRight and MoveTab
+# - Zellij plugin aliases and plugin-manager/session-manager actions
+# - Zellij search options and custom layout/auto-layout behavior
+
+[theme]
+name = "dracula"
+auto_switch = false
+
+[experimental]
+pane_history = true
+switch_ascii_input_source_in_prefix = false
+
+[ui.sound]
+enabled = false

@@ -1,0 +1,44 @@
+# Local authentication and application state
+**/auth.json
+**/credentials.json
+**/credentials.local.json
+**/.env
+**/.env.*
+**/.netrc
+**/.npmrc
+**/.pypirc
+!**/.env.example
+!**/.env.sample
+**/*.pem
+**/*.p12
+**/*.pfx
+**/*.key
+codex/auth.json
+codex/history.jsonl
+codex/*.sqlite*
+codex/cache/
+codex/log/
+codex/sessions/
+codex/shell_snapshots/
+codex/thread-writer-locks/
+codex/mcp-oauth-locks/
+codex/skills/.system/
+codex/skills/herdr/**
+!codex/skills/herdr/SKILL.md
+!codex/skills/herdr/AGENTS.md
+
+# OpenCode installed dependencies and generated install metadata
+opencode/node_modules/
+opencode/package-lock.json
+opencode/gsd-file-manifest.json
+opencode/gsd-install-state.json
+opencode/gsd-migration-journal/
+opencode/.gsd-staging/
+opencode/.oh-my-opencode-slim/
+opencode/.gsd-profile
+
+# Herdr session state, sockets, and logs
+herdr/*.log
+herdr/*.sock
+herdr/session*.json
+herdr/release-notes.json

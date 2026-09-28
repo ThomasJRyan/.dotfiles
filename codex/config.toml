@@ -1,0 +1,23 @@
+service_tier = "fast"
+approval_policy = "never"
+default_permissions = ":workspace"
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+approvals_reviewer = "auto_review"
+
+[features]
+terminal_resize_reflow = true
+memories = true
+goals = true
+prevent_idle_sleep = true
+
+hooks = true
+
+[tui]
+theme = "catppuccin-mocha"
+
+[plugins."atlassian-rovo@openai-curated-remote"]
+enabled = false
+
+[agents]
+max_depth = 1
