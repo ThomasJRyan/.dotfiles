@@ -25,17 +25,11 @@ codex/mcp-oauth-locks/
 codex/skills/.system/
 codex/skills/herdr/**
 !codex/skills/herdr/SKILL.md
-!codex/skills/herdr/AGENTS.md
 
 # OpenCode installed dependencies and generated install metadata
 opencode/node_modules/
 opencode/package-lock.json
-opencode/gsd-file-manifest.json
-opencode/gsd-install-state.json
-opencode/gsd-migration-journal/
-opencode/.gsd-staging/
 opencode/.oh-my-opencode-slim/
-opencode/.gsd-profile
 
 # Herdr session state, sockets, and logs
 herdr/*.log

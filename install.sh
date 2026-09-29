@@ -176,7 +176,7 @@ install_opencode() {
   check_tool OpenCode opencode
   for item in \
     opencode.jsonc oh-my-opencode-slim.json tui.json tui.jsonc herdr-tui-session.js package.json \
-    agents commands hooks plugins skills gsd-core; do
+    agents commands plugins skills; do
     link_path "$DOTFILES_DIR/opencode/$item" "$root/$item" 1
   done
   info "Existing OpenCode package files, dependencies, install state, and credentials are left untouched."

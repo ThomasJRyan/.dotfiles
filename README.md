@@ -4,6 +4,14 @@ Personal configuration for Neovim/LazyVim, Zellij, Herdr, Codex, and OpenCode.
 
 ![Terminal workspace showing Neovim, Codex, and OpenCode panes](assets/workspace-overview.png)
 
+## Intended terminal workflow
+
+The main Zellij instance holds multiple Herdr instances, usually one local
+instance and multiple remote connections. Each Herdr instance contains spaces;
+each space contains tabs; each tab contains panes.
+
+![Diagram showing the Zellij, Herdr, space, tab, and pane hierarchy](assets/herdr-workflow.png)
+
 ## Install
 
 Clone this repository, preview the changes, then run the installer:
@@ -52,15 +60,13 @@ set. Codex files are installed under `~/.codex`.
   `~/.config/herdr-nvim/config.toml` and sets the plugin sidebar position.
 - **Codex** — installs `codex/config.toml`, hooks, agents, rules, and the
   repository's personal skills under `~/.codex/`. The config file is set to
-  mode `0600`. It sets the model and approval behavior, the Herdr permissions
-  profile, trusted project paths, and custom agent and hook behavior.
+  mode `0600`. It sets the model and approval behavior, the built-in workspace
+  permission profile, and custom agent and hook behavior.
 - **OpenCode** — installs `opencode.jsonc`, `oh-my-opencode-slim.json`,
   `tui.json`, `tui.jsonc`, `herdr-tui-session.js`, and `package.json`, plus the
-  `agents`, `commands`, `hooks`, `plugins`, `skills`, and `gsd-core`
-  directories under `~/.config/opencode/`. These set plugin and MCP
-  configuration, terminal preferences, custom workflows, hooks, and the GSD
-  commands and runtime those hooks use. `package.json` declares the plugin
-  dependency.
+   `agents`, `commands`, `hooks`, `plugins`, and `skills` directories under
+   `~/.config/opencode/`. These set plugin configuration, terminal preferences,
+   custom workflows, and hooks. `package.json` declares the plugin dependency.
 
 ## Credentials and local state
 

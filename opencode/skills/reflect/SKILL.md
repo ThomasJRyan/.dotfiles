@@ -57,7 +57,7 @@ For each session, analyze and produce a structured summary:
 ```json
 {
   "session": "ses_14de9c68effegtZtlATm42wnz7",
-  "project": "~/Projects/example-project",
+  "project": process.env.HOME + "/Projects/example-project",
   "timestamp": "2026-06-10T15:08:45.427Z",
   "goal": "Fix CI failure",
   "success": true,

@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "openai",
+  "preset": "copilot",
   "multiplexer": {
     "type": "auto",
     "layout": "main-vertical",
@@ -106,6 +106,31 @@
         "skills": [],
         "mcps": []
       }
+    },
+    "copilot": {
+      "agents": {
+        "fixer": {
+          "model": "github-copilot/claude-opus-5.5",
+          "variant": "high"
+        },
+        "explorer": {
+          "model": "openai/gpt-6-luna",
+          "variant": "low"
+        },
+        "oracle": {
+          "model": "openai/gpt-6-sol",
+          "variant": "high"
+        },
+        "librarian": {
+          "model": "openai/gpt-6-luna",
+          "variant": "low"
+        },
+        "designer": {
+          "model": "openai/gpt-6-luna",
+          "variant": "medium"
+        }
+      },
+      "extends": "openai"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "plugin": [
-    "oh-my-opencode-slim",
-    "@prevalentware/opencode-goal-plugin"
+    "@prevalentware/opencode-goal-plugin",
+    "oh-my-opencode-slim"
   ]
 }
